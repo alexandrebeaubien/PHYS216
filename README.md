@@ -6,10 +6,10 @@ This repository will contain files/code used during the PHYS216 tutorial (Fall 2
     1. Download for Windows, Mac or Linux.
         ![Download](images/Download_anaconda.png)
     2. Once downloaded, install Jupyter Lab from the Anaconda Navigator.
-        ![Download](images/open_jupyter.png)
+        ![Download](images/Open_jupyter.png)
 
 2. Once you have a Jupyter environment (or if you already have/know how to use a Jupyter environment), you can download the scripts directly from this github: https://github.com/alexandrebeaubien/PHYS216.
 
-![Download from GitHub](images/where_download_code.png)
+![Download from GitHub](images/Where_download_code.png)
 
 3. Extract the .ipynb file from the .zip folder & open the Python notebook file with Jupyter Lab.
