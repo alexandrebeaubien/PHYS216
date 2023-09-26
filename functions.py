@@ -14,15 +14,21 @@ scaled_kwargs = {'scale_units':'xy', 'scale':1, 'angles':'xy'}
 default_kwargs = {'scale_units':None, 'scale':None, 'angles':'uv'}
 
 # Inputs are the direction at each x, y point
-def plot_vector_field(u, v, zc=None, kwargs=default_kwargs):
+def plot_vector_field(u, v, zc=None, kwargs=default_kwargs, x=x, y=y, xc=xc, yc=yc, figure=None, cbar=True):
     # Creating figure
-    fig, ax = plt.subplots(figsize=(10,8))
+
+    if figure is None:
+        fig, ax = plt.subplots(figsize=(10,8))
+    else:
+        fig = figure[0]
+        ax = figure[1]
 
     # If color input is not None, plot the color map
     if(zc is not None):
         cmap = cm.spring
         cs = ax.pcolor(xc, yc, zc, cmap=cmap)
-        cbar = fig.colorbar(cs, ax=ax, label=r'$\sqrt{v_x^2 + v_y^2}$')
+        if cbar:
+            cbar = fig.colorbar(cs, ax=ax, label=r'$\sqrt{v_x^2 + v_y^2}$')
 
     # Plot the arrows using quiver
     plt.quiver(x, y, u, v, color='black', **kwargs)
@@ -37,7 +43,7 @@ def plot_vector_field(u, v, zc=None, kwargs=default_kwargs):
 
     # Show plot with grid
     plt.grid()
-    plt.show()
+    # plt.show()
 
 # Plot 3D line by giving 3D coordinates
 def plot_3D_line(xline, yline, zline):
